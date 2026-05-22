@@ -1,78 +1,144 @@
-# Job Application System
+# ระบบรับสมัครงาน (Job Application System)
 
-## Developed By
-Kittipich Chaisongmueang
-
----
-
-## Features
-
-### Management System
-- Add Department
-- Edit Department
-- Delete Department
-
-### Admin Dashboard
-- Total Applicants
-- Total Departments
-- Applicant Status Summary
-
-### Document Management
-- Upload Resume (PDF)
-- Upload Transcript (PDF)
-- Filter Applicants by Department
-- Search Applicants
-
-### Applicant Management
-- View Applicant Detail
-- Update Applicant Status
-- Delete Applicant
-
-### Print Optimization
-- Print Applicant Information
-- A4 Layout Support
-- Browser Print Support
+โปรเจกต์ระบบรับสมัครงาน พัฒนาด้วย Laravel
 
 ---
 
-## Security
-- File Validation
-- File Type Restriction
-- File Size Restriction
-- Authentication Middleware
+# ฟังก์ชันหลัก
+
+## ฝั่งผู้สมัคร
+
+- สมัครงานผ่านฟอร์มออนไลน์
+- อัปโหลด Resume และ Transcript
+- เลือกแผนกที่ต้องการสมัคร
 
 ---
 
-## Technologies Used
+## ฝั่ง Admin
+
+- Login เข้าระบบ
+- Dashboard แสดงสถิติ
+- จัดการแผนก (เพิ่ม / แก้ไข / ลบ)
+- ดูข้อมูลผู้สมัคร
+- ค้นหา / Filter ตามแผนก
+- เปลี่ยนสถานะผู้สมัคร
+- Print ใบสมัคร A4
+- ลบข้อมูลผู้สมัคร
+
+---
+
+# เทคโนโลยีที่ใช้
+
 - Laravel 12
-- PHP 8
+- PHP 8.2
 - MySQL
-- Blade Template
-- Bootstrap / HTML / CSS
+- Bootstrap 5
 
 ---
 
-## Installation
+# วิธีติดตั้งโปรเจกต์
+
+## 1. Clone Project
+
+```bash
+git clone https://github.com/Aiwwezz/job-application-system.git
+```
+
+---
+
+## 2. เข้าโฟลเดอร์โปรเจกต์
+
+```bash
+cd job-application-system
+```
+
+---
+
+## 3. ติดตั้ง Package
 
 ```bash
 composer install
-npm install
-php artisan migrate
+```
+
+---
+
+## 4. สร้างไฟล์ .env
+
+```bash
+copy .env.example .env
+```
+
+---
+
+## 5. Generate Key
+
+```bash
+php artisan key:generate
+```
+
+---
+
+## 6. ตั้งค่าฐานข้อมูล
+
+เปิดไฟล์ `.env`
+
+แก้:
+
+```env
+DB_DATABASE=job_application_db
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+---
+
+## 7. Import Database
+
+Import ไฟล์ SQL ผ่าน phpMyAdmin
+
+---
+
+## 8. รันระบบ
+
+```bash
 php artisan serve
 ```
 
 ---
 
-## Login
+# URL การใช้งาน
 
-Register new account from:
+## สมัครงาน
 
 ```text
-/register
+/apply
 ```
 
-Then login from:
+## Login Admin
 
 ```text
 /login
 ```
+
+## Dashboard
+
+```text
+/dashboard
+```
+
+---
+
+# ระบบความปลอดภัย
+
+- CSRF Protection
+- SQL Injection Protection
+- Validation Input
+- จำกัดไฟล์ PDF
+- จำกัดขนาดไฟล์
+- Auth Middleware
+
+---
+
+# ผู้จัดทำ
+
+Kittipich Chaisongmueang
